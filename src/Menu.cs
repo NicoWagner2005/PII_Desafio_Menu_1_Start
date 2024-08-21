@@ -10,32 +10,29 @@ public class Menu
 {
     private ArrayList dishes = new ArrayList();
 
-    private ArrayList AddDish(string dish)
+    private ArrayList AddDish(string dishName)
     {
-        dishes.add(dish);
+        dishes.add(dishName);
     }
 
-    private ArrayList RemoveDish(string dish)
+    private ArrayList RemoveDish(string dishName)
     {
-        dishes.RemoveAt(dishes.IndexOf(dish));
+        dishes.RemoveAt(dishes.IndexOf(dishName));
     }
 
-    private Dish GetDishByName(string dish)
+    private string GetDishByName(string dishName)
     {
-        if (dish in dishes)
+        foreach (string dish in dishes)
         {
-            return dishes[dishes.IndexOf(dish)];
-        }
-        else
-        {
-            return null
+            if (dish == dishName)
+            {
+                return dish;
+            }
+            else
+            {
+                return null
+            }
         }
     }
-
-    public Menu(ArrayList dishes)
-    {
-        this.Dishes = dishes;
-    }
-    
     
 }
