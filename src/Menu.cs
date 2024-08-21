@@ -9,4 +9,30 @@ using System.Collections;
 public class Menu
 {
     private ArrayList dishes = new ArrayList();
+
+    private ArrayList AddDish(string dishName)
+    {
+        dishes.add(dishName);
+    }
+
+    private ArrayList RemoveDish(string dishName)
+    {
+        dishes.RemoveAt(dishes.IndexOf(dishName));
+    }
+
+    private string GetDishByName(string dishName)
+    {
+        foreach (string dish in dishes)
+        {
+            if (dish == dishName)
+            {
+                return dish;
+            }
+            else
+            {
+                return null
+            }
+        }
+    }
+    
 }
