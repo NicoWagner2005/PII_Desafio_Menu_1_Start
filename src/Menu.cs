@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 namespace Ucu.Poo.Restaurant;
 
 using System.Collections;
@@ -9,30 +11,41 @@ using System.Collections;
 public class Menu
 {
     private ArrayList dishes = new ArrayList();
-
-    private ArrayList AddDish(string dishName)
+    public ArrayList Dishes
     {
-        dishes.add(dishName);
+        get
+        {
+            return dishes;
+        }
+        set
+        {
+            dishes.Add(value);
+        }
     }
 
-    private ArrayList RemoveDish(string dishName)
+    public void AddDish(Dish name)
     {
-        dishes.RemoveAt(dishes.IndexOf(dishName));
+        dishes.Add(name);
     }
 
-    private string GetDishByName(string dishName)
+    public void RemoveDish(Dish name)
+    {
+        dishes.RemoveAt(dishes.IndexOf(name));
+        
+    }
+
+    private string GetDishByName(Dish name)
     {
         foreach (string dish in dishes)
         {
-            if (dish == dishName)
+            if (dish.Equals(name))
             {
                 return dish;
             }
             else
             {
-                return null
+                return null;
             }
         }
     }
-    
 }

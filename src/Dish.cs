@@ -6,7 +6,7 @@ namespace Ucu.Poo.Restaurant;
 public class Dish
 {
     public string name;
-    public string Name(value)       //nombre del platillo
+    public string Name       //nombre del platillo
     {
         get {
             return name;
@@ -18,7 +18,7 @@ public class Dish
     }
 
     public int price;
-    public int Price(value)     //precio del platillo
+    public int Price     //precio del platillo
     {
         get {
             return price;
@@ -30,25 +30,26 @@ public class Dish
     }
 
     public bool vegetarian;
-    public string IsVegetarian(value)    //es vegetariano?  el valor 'vegetariano' es booleano, si es true IsVegetarian devuelve "yes"
+    public string IsVegetarian    //es vegetariano?  el valor 'vegetariano' es booleano, si es true IsVegetarian devuelve "yes"
     {                                       // si es false devuelve "no"
-        get {
-            return vegetarian;
+        get 
+        {
+            return vegetarian.ToString();
         }
         set
         {
-            if (vegetarian)
+            if (value.Equals("True"))
             {
-                return "yes";
+                vegetarian = true;
             }
             else
             {
-                return "no";
+                vegetarian = false;
             }
         }
     }
 
-    public Dish(string name, int price, bool vegetarian)      //constructor
+    public Dish(string name, int price, string vegetarian)      //constructor
     {
         this.Name = name;
         this.Price = price;

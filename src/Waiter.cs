@@ -32,14 +32,14 @@ public class Waiter
         this.AssignedTables = assignedTables;
     }
 
-    public void AssignTables(Table);
+    public void AssignTables(Table number);
     {
-        assignedTables.Add(Table);
+        assignedTables.Add(number);
     }
 
-    public void TakeOrder(Table, Dish)
+    public void TakeOrder(Table number, Dish name)
     {
-        Table.AddToOrder(Dish);
+        number.AddToOrder(name);
     }
 
 

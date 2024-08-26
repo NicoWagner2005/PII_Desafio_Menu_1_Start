@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 
 namespace Ucu.Poo.Restaurant;
@@ -41,13 +42,19 @@ public class Table
     public bool IsOccupied
     {
         
-        return isOcupied;
-        
+        get 
+        {
+            return isOcupied;
+        }
+        set
+        {
+            isOcupied = value;
+        }
     }
 
-    public void AddToOrder(Dish)
+    public void AddToOrder(Dish name)
     {
-        order.Add(Dish);
+        order.Add(name);
     }
 
 
